@@ -1,96 +1,105 @@
-.navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-}
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.logo-container {
-  display: flex;
-  align-items: center;
-}
 
+body {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('./background.jpg') center center / cover no-repeat fixed;
+}
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
 }
 
-.company-name {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 30px;
-  color: #fff;
-  letter-spacing: 2px;
-  text-transform:none;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
 
-.nav-links li {
-  display: inline;
-  margin-right: 10px;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;font-smooth: 2em;
-
-}
-
-body{
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-  url('./background.jpg') center center / cover no-repeat fixed;
-}
-
-
-
-
-.container {
-  display:block;
+.container2 {
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 0;max-width: 50%;margin-top: -170px;margin-left: 600px;
-  font-family: Arial, sans-serif;
+  height: 50vh;
+  
+  
+}@media(max-width:768px){.container2{font-size: 40%;}}
+
+.col2 {
+  text-align: center;
+  
 }
 
-.donate-container {backface-visibility: visible;
-background-image: "./toy.jpg";
-max-width: 50%;
-margin-left: 200px;
-}
-
-
-
-h1 {
-  color:white;
-  margin-bottom: 20px;
-  z-index: inherit;
-  font-size: 30px;
-  margin-left: 800px;
-  margin-top:100px;
-}
-
-p {
-  color:white;
+.text-center2{
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
   margin-bottom: 10px;
-  font-size: 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 40px;
+  color: #dbd5d5;
+  text-shadow: 5px;;font-weight: bold;
 }
 
-form {
-  width: 100%;
+.text-center2:last-child {
+  margin-bottom: 0;
+}
+.enter{
+  font-family: monospace;
+color:rgb(244, 248, 248);
+z-index: 20;
+font-size: larger;
+font-weight: 500;
+font-size: 26px;
+
+
+}
+
+
+
+
+.container3 {
   padding: 20px;
-  background: #fff;
-  box-shadow: 0 2px 5px #ccc; 
+  max-width: 100%;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  display: flex;
+  margin-left: 120px;margin-right: 100px;
+  
+  backdrop-filter: blur(2px);
+  max-width: 80%;
 }
 
-  input {
+.text-center3 {
+  text-align: left;
+  color: rgba(240, 248, 255, 0.815);
+  text-align: justify;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+
+}
+
+@media (max-width: 768px) {
+  .col3{
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .container3 {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+.text-centerMT{font-size:28px;
+  color: #dbd5d5;
+  margin-left: 200px;
+
+}
+
+input {
   width: calc(80% - 10px);
   padding: 5px;
   border: 1px solid #ccc;
@@ -103,7 +112,7 @@ form {
 }
 
 button {
- margin-top: 20px;
+margin-top: 50px;
   background-color: #c2fbd7;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
@@ -126,15 +135,6 @@ button {
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
-
-
-
-
-.h2{
-  font-family: monospace;
-  color: aquamarine;
-  margin-left: 20px;
-}
 .message{
   font-size: small;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -142,71 +142,77 @@ button {
   z-index: 12;
 }
 
-
-.link{
-  color: rgb(162, 178, 194);
-}
-.trans_heading{
-  font-size: larger;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: aliceblue;
-  text-decoration-line: underline;
-}
-.trans{
-  font-size: 18px;
-  line-height: 1.5;
-  color: #fcf9f9;
-
-}
-.bal{
-  color: rgb(84, 173, 114);
-  margin: left -100px;
+form {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px #ccc; 
 }
 
-p4{
-  color: rgb(246, 247, 246);
+
+.message{
+  font-size: small;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(124, 192, 124);
+  z-index: 12;}
+
+#d{
+  margin-left:470px ;
+  margin-top:100px ;
+  
+  justify-content: center;
+  display: flex;
+  
+  
+  
+  display:block;}@media (max-width: 768px) 
+  {#d{
+    margin-left:25px;
+    margin-right : 25px;
+    margin-top: 70px;
+
+  }}
+
+  .trans{
+    margin-top:60px;font-family: monospace;font-size: 15px;
   }
 
-.x{
-  margin-left: 300px;
-  color: #fff
+
+  
+.container5{
+  color:white;
+  display: block; margin-left:-20 ;
+  align-items: center;
+}
+.balance{
+  color: greenyellow;
 }
 
-.common{
-  font-size: 18px;
-  line-height: 1.5;
+.bal{
+  margin-top: 60px;
 }
 
-.tm{
-  font-size: 25px;
-  color: antiquewhite;
-  position: absolute;z-index: 19;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
- #contact-card {
-      width: 300px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin-bottom: 50px;
-      margin-left: 80px;
-      margin-top:-200px;
 
-}
-    
-    #contact-card h3 {
-      margin-top: 0;
-      font-size: 28px;
-      color: #fcf3f3;
-    }
-    
-    #contact-card p {
-      margin: 0;
-      font-size: 17px;
-      color: #faf7f7;
-    }
- 
 
+ul {
+	margin-top: 10px;
+	padding: 15px 0px;
+	background-color: #dfd3d313;}
+
+	ul a{
+		display: inline;
+		margin-right: 10px;
+	}
+	ul a i:hover{
+		transform: scale(1.5);
+		color: #2ab1ce;
+		}
+#name{
+color: aliceblue;
+     }
+#cont{
+    margin-top: 100px;
+	padding-bottom:50px ;
+}
+#h4{color: rgba(240, 255, 255, 0.534);}
 

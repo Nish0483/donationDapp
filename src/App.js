@@ -3,7 +3,12 @@ import Web3 from "web3";
 import "./App.css";
 import logo from "./logo.png";
 import DonationABI from "./Donation.json";
-import Intro from "./intro";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { Navbar, Nav ,Container} from 'react-bootstrap';
+
+
+
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -24,7 +29,7 @@ function App() {
       const contractAddress = "0xb1684bb69E3e780A44A4Df31060Bf2DA08c7F5EF";
       const donationContract = new web3.eth.Contract(DonationABI.abi,contractAddress);
       setContract(donationContract);
-      await loadContractData();
+      //await loadContractData();
     } catch (error) {
       console.error("Failed to initialize contract:", error);
     }
@@ -77,66 +82,105 @@ function App() {
    
 
   return (
-    <div>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="logo-container">
-            <img src={logo} alt="Company Logo" className="logo" />
-            <span className="company-name">Donation DApp</span>
-          </div>
-          <ul className="nav-links">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#contact-card">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
 
-      <div><h1>“It's not how much we give but<br></br>
-        how much love we put into giving.”<br></br>
-         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;― Mother Theresa</h1>
-         </div>
-         <div><Intro></Intro>
-      </div>
 
-      <div className="container">
-        <div className="donate-container">
-          <p className="common">Enter the amount you wish to donate in <b>Ethereum</b></p>
-          <input type="number" placeholder="ETH" onChange={(e) => setAmount(e.target.value)} />
-          <button onClick={handleDonate}>Donate</button>{donationSuccessful && <p className="message">Donation was successful.Thank you !!</p>} 
-          <div className="balance-container"><br></br><p>"make any transaction to view charity balanace and previous history"</p>
-            <h2 className="bal"> Donation Funds Balance:&nbsp;<p4>{contractBalance}</p4>&nbsp;<p4>ETH</p4></h2><br></br>
-          </div>
-          <div className="transaction-container">
-            <h2 className="trans_heading">Last Transactions:</h2>
-            <ul className="trans">
-              {transactions.map((transaction, index) => (
-                <li key={index}>
-                  
-                  Donor: {transaction.donor} <br></br>Amount:&ensp;{transaction.amount}&nbsp;ETH
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div><p5 className="x">*** view all donations & spending in  <a className="link" href="https://etherscan.io/token/0x0ac318d6ec93cf6f97200e4ad6fef15391bc2f38">etherscan</a></p5><br></br><br></br><br></br><br></br>
-      
-      
-      
-      </div>
 
-      <div id="contact-card">
-     <h3>Nishil A</h3>
-    <p>Email: nishil.kri@gmail.com</p>
-    <p>Phone: +91-9037163924</p>
-    <p>Address: &nbsp; westhill, calicut, kerala ,India</p>
-    <p>Linkedin:<a href="https://www.linkedin.com/in/nishil-a-05a3a6137/">@</a>&emsp;Twitter:&nbsp;<a href="https://twitter.com/Nish0483">@</a>&emsp;GitHub: &nbsp;<a href="https://github.com/Nish0483">@</a></p>
-      </div>
-    </div>
+      <><Navbar bg='success' variant="dark" expand="lg">
+      <Container>
+        <img src={logo} className="logo"></img>
+        <Navbar.Brand href="#">donation-Dapp</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbar-nav" />
+        <Navbar.Collapse id="navbar-nav" className="justify-content-end">
+          <Nav className="ml-auto">
+            <Nav.Link href="#">Home</Nav.Link>
+            <Nav.Link href="https://sepolia.etherscan.io/address/0xb1684bb69E3e780A44A4Df31060Bf2DA08c7F5EF">#etherscan</Nav.Link>
+            <Nav.Link href="#cont">Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     
+    
+    <div className="container2">
+        <div className="row">
+          <div className="col2">
+            <p className="text-center2"><i>"It's not how much we give but</i> </p>
+            <p className="text-center2"><i>how much love we put into giving."</i></p>
+            <p className="text-centerMT">- Mother Teresa</p>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div className="container3">
+        <h2 className="text-center3"><b>SAVE A CHILD !</b></h2>
+        <div className="row">
+          <div className="col">
+            <p className="text-center3">Welcome to the Donation-DApp, where you Donate <b>Ethereum(ETH)</b> directly to our smart contract to support various causes, from medical assistance to education and disaster relief of <b>children in need.</b></p>
+            <p className="text-center3">We are Transparent: Track the charity fund balance in real-time. Discover the recent transactions in-site or full transactions on etherscan. Start donating today and save lives.</p>
+            <p className="text-center3">Thank you for being part of TheDonation-dApp community!<br></br></p>
+          </div>
+        </div>
+      </div>
+
+
+<div id="d">
+      
+        <div className="row">
+           <div className="col-md-6">
+            <p className="enter">
+              Enter the amount you wish to donate in <b>Ethereum</b></p>
+            <input
+              type="number"
+              className="form-control"
+              placeholder="ETH"
+              onChange={(e) => setAmount(e.target.value)}/><br></br>
+            <button className="button" onClick={handleDonate}> Donate<br></br></button>
+             {donationSuccessful && (<p className="message"><br></br>Donation was successful. Thank you!!</p>)}</div></div>
+             <div className="container5">
+                <div >
+                  <p className="make"><br></br><br></br>*make any donation to view charity balance and previous history<br></br></p>
+                  <h4 className="bal" ><br></br>
+                    Donation Funds Balance:&nbsp;
+                    < p4 className="balance">{contractBalance}</p4>&nbsp;
+                    <p4>ETH</p4>
+                  </h4>
+                </div>
+             
+              <div className="col-md-6">
+                <h5 className="trans">Last Transactions:</h5>
+                <ul1>
+                  {transactions.map((transaction, index) => (
+                    <li key={index}>
+                      Donor: {transaction.donor}
+                      <br />
+                      Amount:&ensp;{transaction.amount}&nbsp;ETH
+                    </li >
+                  ))}<br></br><br></br>
+                </ul1>
+              </div>
+            </div>
+          </div>
+          
+          <div id="cont">
+      <ul ><h4 id="h4">Nishil</h4>
+          <a href="https://twitter.com/Nish0483" target="_blank"><i class="fa fa-twitter" style={{ fontSize: "16px" }}></i></a>
+         <a href="https://www.linkedin.com/in/nishil-a-05a3a6137/" target="_blank"><i class="fa fa-linkedin" style={{ fontSize: "16px" }}></i></a>
+          <a href="https://www.instagram.com/nishil__/" target="_blank"><i class="fa fa-instagram" style={{ fontSize: "16px" }}></i></a>
+          <a href="https://github.com/Nish0483" target="_blank"><i class="fa fa-github" style={{ fontSize: "16px" }}></i></a>
+      </ul>
+    </div>
+      
+      
+      <div>
+      </div></>
+
+
+    
+        
+  
   );
+  
 }
 
 export default App;
